@@ -103,43 +103,6 @@
     </div>
   </section>
 
-  <!-- Existing page content remains unchanged... -->
-  
-  <script>
-    const counters = document.querySelectorAll('.stat-number');
-    let started = false;
-
-    function animateCounter(el, target, duration) {
-      let start = 0;
-      let increment = target / (duration / 20);
-      let count = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-          el.textContent = target;
-          clearInterval(count);
-        } else {
-          el.textContent = Math.floor(start);
-        }
-      }, 20);
-    }
-
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !started) {
-          counters.forEach(counter => {
-            animateCounter(counter, +counter.dataset.target, 5000);
-          });
-          started = true;
-          obs.disconnect();
-        }
-      });
-    }, {
-      threshold: 0.5
-    });
-
-    observer.observe(document.querySelector('.stats-banner'));
-  </script>
-
   <section id="about" class="section light container">
     <h2>Meet Jeremy</h2>
     <p>I’m a certified IB Physics teacher based in Dubai with 8+ years' experience across top international schools in Australia, Zimbabwe, and the UAE. My sessions are designed to improve understanding, exam technique, and student confidence — fast.</p>
