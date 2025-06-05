@@ -2,50 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Premium IB Physics and Maths tutoring in Dubai by Jeremy Jaques. Book your free session today and boost your grades.">
   <meta name="keywords" content="IB Physics Tutor Dubai, IB Maths Tutor, Online Tutoring, PrimeED Tutors, Jeremy Jaques">
   <meta name="author" content="Jeremy Jaques">
   <title>Jeremy Jaques | IB Physics & Maths Tutor in Dubai</title>
   <link rel="stylesheet" href="assets/CSS/style.css">
+  <link rel="stylesheet" href="gradient-transition.css">
+  <link rel="stylesheet" href="responsive.css">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll('.stat-number');
-    let started = false;
-
-    function animateCounter(el, target, duration) {
-      let start = 0;
-      const increment = target / (duration / 20);
-      const count = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-          el.textContent = target;
-          clearInterval(count);
-        } else {
-          el.textContent = Math.floor(start);
-        }
-      }, 20);
-    }
-
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !started) {
-          counters.forEach(counter => {
-            animateCounter(counter, +counter.dataset.target, 5000);
-          });
-          started = true;
-          obs.disconnect();
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const statSection = document.querySelector('.stats-banner');
-    if (statSection) observer.observe(statSection);
-  });
-</script>
 <body>
   <header class="site-header">
     <div class="nav-wrapper">
@@ -70,35 +37,34 @@
     </div>
   </header>
 
-  <section class="hero-section container-flex">
+  <section class="hero container-flex">
     <div class="hero-left">
-      <h1>IB Physics & Maths Has Never Been So Clear</h1>
-      <p>Online tutoring with a certified IB teacher based in Dubai.</p>
-      <a href="#book" class="button">TAKE YOUR FIRST LESSON FREE</a>
+      <h1>Hi, I'm Jeremy Jaques</h1>
+      <p>Helping students master IB Physics, Maths & Science.</p>
+      <a href="#book" class="button">Book a Free Lesson</a>
     </div>
     <div class="hero-right">
       <img src="assets/images/jeremy-hero.SVG" alt="Jeremy Jaques tutoring photo" />
     </div>
   </section>
 
-  <!-- Curved transition -->
-  <div class="curve-divider">
-    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-      <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#1a1a1a"></path>
+  <div class="curved-transition">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path fill="#f4f4f4" d="M0,0 C480,80 960,0 1440,80 L1440,0 L0,0 Z"></path>
     </svg>
   </div>
 
   <section class="stats-banner">
     <div class="stat-box">
-      <span class="stat-number" data-target="196">0</span>
+      <div id="students" class="stat-number" data-target="196">0</div>
       <p>Students Helped</p>
     </div>
     <div class="stat-box">
-      <span class="stat-number" data-target="4368">0</span>
+      <div id="hours" class="stat-number" data-target="4368">0</div>
       <p>Hours Tutored</p>
     </div>
     <div class="stat-box">
-      <span class="stat-number" data-target="179">0</span>
+      <div id="reviews" class="stat-number" data-target="179">0</div>
       <p>5-Star Reviews</p>
     </div>
   </section>
