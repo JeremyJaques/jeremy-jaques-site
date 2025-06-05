@@ -21,15 +21,45 @@ body {
   line-height: 1.6;
 }
 
-/* === HEADER === */
+/* === HEADER (NO STICKY) === */
 .site-header {
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  /* Removed sticky positioning */
 }
+
+/* === NAVIGATION BAR LINKS (LEFT-ALIGNED) === */
+.main-nav {
+  background: transparent;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 100px; /* aligns with logo */
+  margin-bottom: 1.5rem;
+}
+
+.main-nav .container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  color: #003049;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--brand-orange);
+  transform: scale(1.05);
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
