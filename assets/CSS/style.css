@@ -1,33 +1,12 @@
-.main-nav-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2rem 0;
-  background: transparent;
-}
-
-.main-nav-links a {
-  color: #003049; /* Same as logo/brand for consistency */
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.main-nav-links a:hover {
-  color: var(--brand-orange);
-  transform: scale(1.05);
-}
-/* Root Variables */
+/* === VARIABLES === */
 :root {
   --brand-blue: #0077b6;
   --brand-orange: #ff6f3c;
   --brand-yellow: #ffd166;
-  --brand-bg: #f4f4f4; /* ✅ This gives you an off-white body */
+  --brand-bg: #f4f4f4;
 }
 
-/* Reset & Base */
+/* === RESET & BASE === */
 * {
   box-sizing: border-box;
 }
@@ -42,59 +21,7 @@ body {
   line-height: 1.6;
 }
 
-/* Hero Section */
-.hero {
-  background: white;
-  color: #003049;
-  text-align: center;
-  padding: 5rem 2rem;
-}
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-.hero .button {
-  background: #f77f00;
-  padding: 1rem 2rem;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-}
-
-/* General Layout */
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 2rem;
-}
-.section {
-  padding: 4rem 0;
-}
-.section.dark {
-  background: #f8f9fa;
-}
-.section.light {
-  background: #fff;
-}
-.section.gradient {
-  background: linear-gradient(to right, #f77f00, #fcbf49);
-  color: white;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-nav a {
-  color: white;
-  padding: 15px;
-  text-decoration: none;
-}
-
-/* Navigation – Header */
+/* === HEADER === */
 .site-header {
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
@@ -107,47 +34,28 @@ nav a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  padding: 1rem 2rem;
-  background-color: white;
-}
-
-/* NEW: Centered Nav Links */
-.main-links {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.main-links a {
-  text-decoration: none;
-  color: #003049;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-.main-links a:hover {
-  color: var(--brand-orange);
-  transform: scale(1.05);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
 }
 .logo {
-  height: 50px;
+  height: 90px;
   max-width: 100%;
 }
+
+/* === SOCIAL ICONS + CTA BUTTON === */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .icon-links a {
   color: #333;
-  font-size: 20px;
+  font-size: 24px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .icon-links a:hover {
-  color: #0077b6;
+  color: var(--brand-blue);
   transform: scale(1.1);
 }
 .btn-green {
@@ -157,14 +65,86 @@ nav a {
   border-radius: 25px;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 .btn-green:hover {
   background: linear-gradient(to right, #00cec9, #00b894);
   transform: scale(1.05);
 }
 
-/* Cards & Layout Elements */
+/* === MAIN NAVIGATION BAR === */
+.main-nav {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  margin-bottom: 1rem;
+}
+.main-nav .container {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.main-nav a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.main-nav a:hover {
+  color: var(--brand-orange);
+  transform: scale(1.05);
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: white;
+  color: #003049;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero .button {
+  background: var(--brand-orange);
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
+.subtext {
+  margin-top: 1rem;
+}
+
+/* === SECTIONS === */
+.section {
+  padding: 4rem 0;
+}
+.section.dark {
+  background: #f8f9fa;
+}
+.section.light {
+  background: #fff;
+}
+.section.gradient {
+  background: linear-gradient(to right, var(--brand-orange), var(--brand-yellow));
+  color: white;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem;
+}
+.center {
+  text-align: center;
+}
+
+/* === CARDS === */
 .cards {
   display: flex;
   gap: 2rem;
@@ -179,6 +159,8 @@ nav a {
   flex: 1 1 250px;
   text-align: center;
 }
+
+/* === TWO-COL LAYOUT === */
 .two-col {
   display: flex;
   gap: 2rem;
@@ -191,11 +173,8 @@ nav a {
   border: none;
   border-radius: 8px;
 }
-.center {
-  text-align: center;
-}
 
-/* Carousel */
+/* === CAROUSEL === */
 .carousel {
   display: flex;
   overflow-x: auto;
@@ -208,13 +187,12 @@ nav a {
   background: #fff;
   border-left: 5px solid var(--brand-orange);
   padding: 20px;
-  margin: 0;
   font-style: italic;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
-/* LessonSpace Section */
+/* === LESSONSPACE === */
 .lessonspace {
   text-align: center;
   padding: 20px;
@@ -228,7 +206,7 @@ nav a {
   margin: 20px auto;
 }
 
-/* CTA */
+/* === CTA SECTION === */
 .cta {
   background: var(--brand-yellow);
   padding: 30px;
@@ -246,7 +224,15 @@ nav a {
   font-size: 1.1rem;
 }
 
-/* Popup Banner */
+/* === FORM === */
+iframe.tutorbird-form {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* === POPUP BANNER === */
 .popup-banner {
   position: fixed;
   bottom: 20px;
@@ -265,7 +251,7 @@ nav a {
   text-decoration: underline;
 }
 
-/* Floating WhatsApp */
+/* === WHATSAPP BUTTON === */
 .floating-whatsapp {
   position: fixed;
   bottom: 20px;
@@ -288,7 +274,7 @@ nav a {
   transform: scale(1.1);
 }
 
-/* Footer */
+/* === FOOTER === */
 footer {
   background: #222;
   color: white;
@@ -296,19 +282,11 @@ footer {
   text-align: center;
 }
 footer a {
-  color: #ffd166;
+  color: var(--brand-yellow);
   text-decoration: none;
 }
 
-/* Form */
-iframe.tutorbird-form {
-  width: 100%;
-  height: 500px;
-  border: none;
-  border-radius: 8px;
-}
-
-/* Decorative Highlights */
+/* === DECORATIVE HIGHLIGHT === */
 .underline-highlight {
   background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
   background-repeat: no-repeat;
@@ -317,7 +295,7 @@ iframe.tutorbird-form {
   padding: 0 .1em;
 }
 
-/* Animations */
+/* === ANIMATIONS === */
 @keyframes slideIn {
   from { opacity: 0; transform: translateY(-30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -327,7 +305,7 @@ iframe.tutorbird-form {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Mobile */
+/* === MOBILE === */
 @media (max-width: 768px) {
   .hero h1,
   header h1 {
@@ -336,11 +314,4 @@ iframe.tutorbird-form {
   .youtube-section iframe {
     height: 250px;
   }
-}
-.main-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  padding: 1rem 0;
 }
