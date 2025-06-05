@@ -3,40 +3,289 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeremy Jaques | IB Physics Tutor</title>
+  <meta name="description" content="Jeremy Jaques - Premium IB Physics and Maths Tutoring in Dubai. Get your first session free. Book now and transform your child's results.">
+  <title>Jeremy Jaques | IB Physics & Maths Tutor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --brand-blue: #0077b6;
+      --brand-orange: #ff6f3c;
+      --brand-yellow: #ffd166;
+      --brand-bg: #f4f4f4;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+      background-color: var(--brand-bg);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--brand-blue);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      animation: slideIn 1s ease-out forwards;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #222;
+    }
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .cta {
+      background: var(--brand-yellow);
+      padding: 30px;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .cta a {
+      display: inline-block;
+      background: var(--brand-orange);
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 12px;
+      font-size: 1.1rem;
+    }
+    .packages {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .packages h3 {
+      color: var(--brand-blue);
+    }
+    .packages ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .packages li {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+    }
+    .carousel blockquote {
+      flex: 0 0 90%;
+      scroll-snap-align: start;
+      background: #fff;
+      border-left: 5px solid var(--brand-orange);
+      padding: 20px;
+      margin: 0;
+      font-style: italic;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .blog-section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .blog-section h3 {
+      color: var(--brand-blue);
+    }
+    .blog-preview {
+      margin-bottom: 20px;
+    }
+    .blog-preview h4 {
+      margin-bottom: 8px;
+    }
+    .blog-preview p {
+      color: #666;
+    }
+    .youtube-section iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    .lessonspace {
+      text-align: center;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .lessonspace img {
+      max-width: 200px;
+      margin: 20px auto;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+    .floating-whatsapp a {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 24px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .popup-banner {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, var(--brand-orange), var(--brand-yellow));
+      color: white;
+      padding: 16px 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-weight: bold;
+      animation: fadeInUp 1s ease-out;
+      z-index: 1000;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .underline-highlight {
+      background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      background-repeat: no-repeat;
+      background-size: 100% 0.3em;
+      background-position: 0 90%;
+      padding: 0 .1em;
+    }
+    iframe.tutorbird-form {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .youtube-section iframe {
+        height: 250px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Jeremy Jaques</h1>
-    <p>Helping 196+ students for over 4368 hours</p>
-    <button onclick="window.location.href='https://g.page/r/CfIbm1x-rKeSEBM/review';">Leave a Google Review</button>
+    <h1>IB Physics & Maths Tutoring That Works</h1>
+    <p><span class="underline-highlight">Get your first session FREE</span> — Limited Time Only</p>
   </header>
 
-  <section id="counters">
-    <div>Students Helped: <span id="students">0</span></div>
-    <div>Hours Tutored: <span id="hours">0</span></div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#youtube">Watch</a>
+    <a href="#packages">Pricing</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#lessonspace">LessonSpace</a>
+    <a href="#book">Book</a>
+  </nav>
+
+  <section id="about">
+    <h2>Hi, I'm Jeremy</h2>
+    <p>I’m a certified IB Physics teacher based in Dubai with over 8 years’ experience across top schools in Australia, Zimbabwe, and the UAE. I help students <span class="underline-highlight">rapidly improve</span> their grades with exam-focused, high-impact sessions — online or in-person.</p>
+  </section>
+
+  <section class="youtube-section" id="youtube">
+    <h2>Why Students Succeed With Me</h2>
+    <iframe src="https://www.youtube.com/embed/69Pw_vfSwJc" allowfullscreen></iframe>
+  </section>
+
+  <section class="packages" id="packages">
+    <h2>Choose a Tutoring Package</h2>
+    <ul>
+      <li><strong>5-Hour Pack (AED 1125)</strong> – AED 225/hr – Great for quick topic reviews. Includes one free IA/EE planning session. 10% savings.</li>
+      <li><strong>10-Hour Pack (AED 2100)</strong> – AED 210/hr – Ideal for pre-exam revision and deeper understanding. Includes recorded sessions and feedback reports. 15% savings.</li>
+      <li><strong>20-Hour Pack (AED 3750)</strong> – AED 187.50/hr – Full-term coverage with weekly review, IA/EE support, and extended resources. 25% savings.</li>
+    </ul>
+  </section>
+
+  <section id="testimonials">
+    <h2>What Parents & Students Say</h2>
+    <div class="carousel">
+      <blockquote>“Jeremy’s lessons helped me jump from a 4 to a 7 in IB Physics. He’s incredibly clear and motivating.” – Yusuf, Year 13</blockquote>
+      <blockquote>“My daughter became more confident and her mock scores jumped in just 6 weeks.” – Parent of IB HL student</blockquote>
+      <blockquote>“Best investment I’ve made in my son’s education. The structure, feedback and clarity are unmatched.” – Parent, G11 Physics</blockquote>
+    </div>
+  </section>
+
+  <section class="lessonspace" id="lessonspace">
+    <h2>Powered by LessonSpace</h2>
+    <p>All sessions are conducted through LessonSpace – a world-class, interactive learning platform used by top international tutoring firms.</p>
+    <img src="https://uploads-ssl.webflow.com/5f97e36a4a1a122bda1394a4/6194dc0b8a8453d0cb1196bb_logo_lessonspace.svg" alt="LessonSpace Logo">
+    <p><a href="https://www.thelessonspace.com/branding" target="_blank">See the LessonSpace Experience</a></p>
+  </section>
+
+  <section class="blog-section">
+    <h2>PrimeED Insights</h2>
+    <div class="blog-preview">
+      <h4>How to Score a 7 in IB Physics HL</h4>
+      <p>Tips from a certified IB teacher: question types, mark scheme hacks, and time strategies. <a href="#">Read more</a></p>
+    </div>
+    <div class="blog-preview">
+      <h4>Top IA Topics That Actually Work</h4>
+      <p>IA project ideas that score well and align with your interests. <a href="#">Read more</a></p>
+    </div>
+  </section>
+
+  <section class="cta" id="book">
+    <h2>Book or Sign Up Instantly</h2>
+    <p>Don’t wait. Book your free session or sign up below.</p>
+    <iframe class="tutorbird-form" src="https://primeedtutors.tutorbird.com/Registration/Book/"></iframe>
   </section>
 
   <footer>
-    <p>Jeremy Jaques | Powered by PrimeED Tutors</p>
+    <p>&copy; 2025 Jeremy Jaques | PrimeED Tutors | <a href="https://www.linkedin.com/in/thelearningcoachjeremy/" target="_blank" style="color:#ffd166;">LinkedIn</a></p>
   </footer>
 
-  <script>
-    function animateValue(id, start, end, duration) {
-      let range = end - start;
-      let current = start;
-      let increment = end > start ? 1 : -1;
-      let stepTime = Math.abs(Math.floor(duration / range));
-      let obj = document.getElementById(id);
-      let timer = setInterval(function () {
-        current += increment;
-        obj.textContent = current;
-        if (current == end) clearInterval(timer);
-      }, stepTime);
-    }
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/971585574637" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
 
-    animateValue("students", 0, 196, 2000);
-    animateValue("hours", 0, 4368, 3000);
-  </script>
+  <div class="popup-banner">
+    🎉 First session is <strong>FREE</strong> — Book now!
+  </div>
 </body>
 </html>
