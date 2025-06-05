@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeremy Jaques | IB Physics Tutor</title>
+</head>
+<body>
+  <header>
+    <h1>Jeremy Jaques</h1>
+    <p>Helping 196+ students for over 4368 hours</p>
+    <button onclick="window.location.href='https://g.page/r/CfIbm1x-rKeSEBM/review';">Leave a Google Review</button>
+  </header>
+
+  <section id="counters">
+    <div>Students Helped: <span id="students">0</span></div>
+    <div>Hours Tutored: <span id="hours">0</span></div>
+  </section>
+
+  <footer>
+    <p>Jeremy Jaques | Powered by PrimeED Tutors</p>
+  </footer>
+
+  <script>
+    function animateValue(id, start, end, duration) {
+      let range = end - start;
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let obj = document.getElementById(id);
+      let timer = setInterval(function () {
+        current += increment;
+        obj.textContent = current;
+        if (current == end) clearInterval(timer);
+      }, stepTime);
+    }
+
+    animateValue("students", 0, 196, 2000);
+    animateValue("hours", 0, 4368, 3000);
+  </script>
+</body>
+</html>
