@@ -1,0 +1,241 @@
+:root {
+    --brand-blue: #0077b6;
+    --brand-orange: #ff6f3c;
+    --brand-yellow: #ffd166;
+    --brand-bg: #f4f4f4;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    background-color: var(--brand-bg);
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .hero {
+    background: #003049;
+    color: white;
+    text-align: center;
+    padding: 5rem 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero .button {
+    background: #f77f00;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #222;
+  }
+  
+  nav a {
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+  }
+  
+  .section {
+    padding: 4rem 0;
+  }
+  
+  .section.dark {
+    background: #f8f9fa;
+  }
+  
+  .section.light {
+    background: #fff;
+  }
+  
+  .section.gradient {
+    background: linear-gradient(to right, #f77f00, #fcbf49);
+    color: white;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 250px;
+    text-align: center;
+  }
+  
+  .two-col {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .two-col iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .cta {
+    background: var(--brand-yellow);
+    padding: 30px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .cta a {
+    display: inline-block;
+    background: var(--brand-orange);
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 12px;
+    font-size: 1.1rem;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+  }
+  
+  .carousel blockquote {
+    flex: 0 0 90%;
+    scroll-snap-align: start;
+    background: #fff;
+    border-left: 5px solid var(--brand-orange);
+    padding: 20px;
+    margin: 0;
+    font-style: italic;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  footer {
+    background: #222;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #ffd166;
+    text-decoration: none;
+  }
+  
+  .lessonspace {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .lessonspace img {
+    max-width: 200px;
+    margin: 20px auto;
+  }
+  
+  .popup-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--brand-orange), var(--brand-yellow));
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-weight: bold;
+    animation: fadeInUp 1s ease-out;
+    z-index: 1000;
+  }
+  
+  .floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+  }
+  
+  .floating-whatsapp a {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  iframe.tutorbird-form {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .underline-highlight {
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: 0 90%;
+    padding: 0 .1em;
+  }
+  
+  @media (max-width: 768px) {
+    .hero h1,
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .youtube-section iframe {
+      height: 250px;
+    }
+  }
