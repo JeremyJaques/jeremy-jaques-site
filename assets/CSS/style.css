@@ -109,6 +109,29 @@ nav a {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  padding: 1rem 2rem;
+  background-color: white;
+}
+
+/* NEW: Centered Nav Links */
+.main-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main-links a {
+  text-decoration: none;
+  color: #003049;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.main-links a:hover {
+  color: var(--brand-orange);
+  transform: scale(1.05);
 }
 .logo {
   height: 50px;
