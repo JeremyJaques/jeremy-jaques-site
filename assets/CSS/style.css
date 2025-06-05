@@ -24,7 +24,7 @@
   --brand-blue: #0077b6;
   --brand-orange: #ff6f3c;
   --brand-yellow: #ffd166;
-  --brand-bg: #f4f4f4;
+  --brand-bg: #f4f4f4; /* ✅ This gives you an off-white body */
 }
 
 /* Reset & Base */
@@ -44,8 +44,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background: #003049;
-  color: white;
+  background: white;
+  color: #003049;
   text-align: center;
   padding: 5rem 2rem;
 }
