@@ -81,6 +81,65 @@
     </div>
   </section>
 
+  <!-- Curved transition -->
+  <div class="curve-divider">
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,0 C480,100 960,0 1440,100 L1440,0 L0,0 Z" fill="#1a1a1a"></path>
+    </svg>
+  </div>
+
+  <section class="stats-banner">
+    <div class="stat-box">
+      <span class="stat-number" data-target="196">0</span>
+      <p>Students Helped</p>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number" data-target="4368">0</span>
+      <p>Hours Tutored</p>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number" data-target="179">0</span>
+      <p>5-Star Reviews</p>
+    </div>
+  </section>
+
+  <!-- Existing page content remains unchanged... -->
+  
+  <script>
+    const counters = document.querySelectorAll('.stat-number');
+    let started = false;
+
+    function animateCounter(el, target, duration) {
+      let start = 0;
+      let increment = target / (duration / 20);
+      let count = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          el.textContent = target;
+          clearInterval(count);
+        } else {
+          el.textContent = Math.floor(start);
+        }
+      }, 20);
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          counters.forEach(counter => {
+            animateCounter(counter, +counter.dataset.target, 5000);
+          });
+          started = true;
+          obs.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    observer.observe(document.querySelector('.stats-banner'));
+  </script>
+
   <section class="stats-banner">
     <div class="stat-box">
       <span class="stat-number" data-target="196">0</span>
