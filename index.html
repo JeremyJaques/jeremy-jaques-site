@@ -12,54 +12,53 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <script>
-  const counters = document.querySelectorAll('.stat-number');
-  let started = false;
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.stat-number');
+    let started = false;
 
-  function animateCounter(el, target, duration) {
-    let start = 0;
-    let increment = target / (duration / 20);
-    let count = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        el.textContent = target;
-        clearInterval(count);
-      } else {
-        el.textContent = Math.floor(start);
-      }
-    }, 20);
-  }
+    function animateCounter(el, target, duration) {
+      let start = 0;
+      const increment = target / (duration / 20);
+      const count = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          el.textContent = target;
+          clearInterval(count);
+        } else {
+          el.textContent = Math.floor(start);
+        }
+      }, 20);
+    }
 
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !started) {
-        counters.forEach(counter => {
-          animateCounter(counter, +counter.dataset.target, 5000);
-        });
-        started = true;
-        obs.disconnect();
-      }
-    });
-  }, {
-    threshold: 0.5
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          counters.forEach(counter => {
+            animateCounter(counter, +counter.dataset.target, 5000);
+          });
+          started = true;
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statSection = document.querySelector('.stats-banner');
+    if (statSection) observer.observe(statSection);
   });
-
-  observer.observe(document.querySelector('.stats-banner'));
 </script>
 <body>
   <header class="site-header">
-    <div class="header-container">
-      <a href="/">
-        <img src="assets/images/logo-black-trans.SVG" alt="PrimeED Tutors Logo" class="logo" />
-      </a>
-  
-      <nav class="main-nav">
-        <div class="container">
-          <a href="#about">About Me</a>
-          <a href="#packages">Pricing</a>
-        </div>
+    <div class="nav-wrapper">
+      <div class="logo-area">
+        <a href="/">
+          <img src="assets/images/logo-black-trans.SVG" alt="PrimeED Tutors Logo" class="logo" />
+        </a>
+      </div>
+      <nav class="main-nav-links">
+        <a href="#about">About</a>
+        <a href="#packages">Pricing</a>
       </nav>
-  
-      <div class="nav-right">
+      <div class="right-icons">
         <div class="icon-links">
           <a href="https://wa.me/971585574637?text=Hi!%20I%27d%20like%20to%20book%20my%20free%2030%20minute%20session" target="_blank"><i class="fab fa-whatsapp"></i></a>
           <a href="mailto:primeedtutors@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -71,125 +70,121 @@
     </div>
   </header>
 
-<!-- Hero Section -->
-<section class="hero-section container-flex">
-  <div class="hero-left">
-    <h1>IB Physics & Maths Has Never Been So Clear</h1>
-    <p>Online tutoring with a certified IB teacher based in Dubai.</p>
-    <a href="#book" class="button">TAKE YOUR FIRST LESSON FREE</a>
-  </div>
-  <div class="hero-right">
-    <img src="assets/images/jeremy-hero.svg" alt="Jeremy Jaques tutoring photo" />
-  </div>
-</section>
+  <section class="hero-section container-flex">
+    <div class="hero-left">
+      <h1>IB Physics & Maths Has Never Been So Clear</h1>
+      <p>Online tutoring with a certified IB teacher based in Dubai.</p>
+      <a href="#book" class="button">TAKE YOUR FIRST LESSON FREE</a>
+    </div>
+    <div class="hero-right">
+      <img src="assets/images/jeremy-hero.svg" alt="Jeremy Jaques tutoring photo" />
+    </div>
+  </section>
 
-<!-- Stats Section -->
-<section class="stats-banner">
-  <div class="stat-box">
-    <span class="stat-number" data-target="196">0</span>
-    <p>Students Helped</p>
-  </div>
-  <div class="stat-box">
-    <span class="stat-number" data-target="4368">0</span>
-    <p>Hours Tutored</p>
-  </div>
-  <div class="stat-box">
-    <span class="stat-number" data-target="179">0</span>
-    <p>5-Star Reviews</p>
-  </div>
-</section>
+  <section class="stats-banner">
+    <div class="stat-box">
+      <span class="stat-number" data-target="196">0</span>
+      <p>Students Helped</p>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number" data-target="4368">0</span>
+      <p>Hours Tutored</p>
+    </div>
+    <div class="stat-box">
+      <span class="stat-number" data-target="179">0</span>
+      <p>5-Star Reviews</p>
+    </div>
+  </section>
 
-<section id="about" class="section light container">
-  <h2>Meet Jeremy</h2>
-  <p>I’m a certified IB Physics teacher based in Dubai with 8+ years' experience across top international schools in Australia, Zimbabwe, and the UAE. My sessions are designed to improve understanding, exam technique, and student confidence — fast.</p>
-</section>
+  <section id="about" class="section light container">
+    <h2>Meet Jeremy</h2>
+    <p>I’m a certified IB Physics teacher based in Dubai with 8+ years' experience across top international schools in Australia, Zimbabwe, and the UAE. My sessions are designed to improve understanding, exam technique, and student confidence — fast.</p>
+  </section>
 
-<section id="youtube" class="section gradient">
-  <div class="container">
-    <h2>Why Students Succeed With Me</h2>
-    <iframe src="https://www.youtube.com/embed/69Pw_vfSwJc" allowfullscreen></iframe>
-  </div>
-</section>
+  <section id="youtube" class="section gradient">
+    <div class="container">
+      <h2>Why Students Succeed With Me</h2>
+      <iframe src="https://www.youtube.com/embed/69Pw_vfSwJc" allowfullscreen></iframe>
+    </div>
+  </section>
 
-<section id="packages" class="section dark">
-  <div class="container">
-    <h2>Choose a Tutoring Package</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>5-Hour Pack</h3>
-        <p>AED 1125 (AED 225/hr)</p>
-        <p>Ideal for quick topic reviews. Includes 1 free IA/EE planning session.</p>
-      </div>
-      <div class="card">
-        <h3>10-Hour Pack</h3>
-        <p>AED 2100 (AED 210/hr)</p>
-        <p>Perfect for revision. Includes session recordings + feedback reports.</p>
-      </div>
-      <div class="card">
-        <h3>20-Hour Pack</h3>
-        <p>AED 3750 (AED 187.50/hr)</p>
-        <p>Complete support with IA/EE guidance and full-term coverage.</p>
+  <section id="packages" class="section dark">
+    <div class="container">
+      <h2>Choose a Tutoring Package</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>5-Hour Pack</h3>
+          <p>AED 1125 (AED 225/hr)</p>
+          <p>Ideal for quick topic reviews. Includes 1 free IA/EE planning session.</p>
+        </div>
+        <div class="card">
+          <h3>10-Hour Pack</h3>
+          <p>AED 2100 (AED 210/hr)</p>
+          <p>Perfect for revision. Includes session recordings + feedback reports.</p>
+        </div>
+        <div class="card">
+          <h3>20-Hour Pack</h3>
+          <p>AED 3750 (AED 187.50/hr)</p>
+          <p>Complete support with IA/EE guidance and full-term coverage.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="testimonials" class="section light">
-  <div class="container">
-    <h2>What Students & Parents Say</h2>
-    <div class="carousel">
-      <blockquote>"Jeremy’s lessons helped me jump from a 4 to a 7 in IB Physics." – Yusuf, Year 13</blockquote>
-      <blockquote>"My daughter became more confident and improved in just 6 weeks." – Parent, HL student</blockquote>
-      <blockquote>"Clear structure, excellent feedback — truly the best investment." – Parent, G11 Physics</blockquote>
+  <section id="testimonials" class="section light">
+    <div class="container">
+      <h2>What Students & Parents Say</h2>
+      <div class="carousel">
+        <blockquote>"Jeremy’s lessons helped me jump from a 4 to a 7 in IB Physics." – Yusuf, Year 13</blockquote>
+        <blockquote>"My daughter became more confident and improved in just 6 weeks." – Parent, HL student</blockquote>
+        <blockquote>"Clear structure, excellent feedback — truly the best investment." – Parent, G11 Physics</blockquote>
+      </div>
     </div>
+  </section>
+
+  <section id="lessonspace" class="section gradient">
+    <div class="container center">
+      <h2>Interactive Learning with LessonSpace</h2>
+      <img src="https://uploads-ssl.webflow.com/5f97e36a4a1a122bda1394a4/6194dc0b8a8453d0cb1196bb_logo_lessonspace.svg" alt="LessonSpace Logo">
+      <p>We use the world’s most effective online whiteboard platform, trusted by top tutoring firms globally.</p>
+      <a class="button" href="https://www.thelessonspace.com/branding" target="_blank">Explore LessonSpace</a>
+    </div>
+  </section>
+
+  <section class="section light container">
+    <h2>PrimeED Insights</h2>
+    <div class="blog-preview">
+      <h4>How to Score a 7 in IB Physics HL</h4>
+      <p>Learn proven tactics and past-paper secrets to maximise your marks. <a href="#">Read more</a></p>
+    </div>
+    <div class="blog-preview">
+      <h4>Top IA Topics That Actually Work</h4>
+      <p>Get ideas that stand out and align with the rubric. <a href="#">Read more</a></p>
+    </div>
+  </section>
+
+  <section id="book" class="section gradient">
+    <div class="container center">
+      <h2>Book a Free Trial or Sign Up</h2>
+      <p>No spam. No pressure. Just results-driven tutoring you can trust.</p>
+      <iframe class="form-frame" src="https://primeedtutors.tutorbird.com/Registration/Book/"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jeremy Jaques | PrimeED Tutors | <a href="https://www.linkedin.com/in/thelearningcoachjeremy/" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <div class="popup-banner">
+    🎉 First session is <strong>FREE</strong> — <a href="#book">Book now!</a>
   </div>
-</section>
 
-<section id="lessonspace" class="section gradient">
-  <div class="container center">
-    <h2>Interactive Learning with LessonSpace</h2>
-    <img src="https://uploads-ssl.webflow.com/5f97e36a4a1a122bda1394a4/6194dc0b8a8453d0cb1196bb_logo_lessonspace.svg" alt="LessonSpace Logo">
-    <p>We use the world’s most effective online whiteboard platform, trusted by top tutoring firms globally.</p>
-    <a class="button" href="https://www.thelessonspace.com/branding" target="_blank">Explore LessonSpace</a>
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/971585574637?text=Hi!%20I%27d%20like%20to%20book%20my%20free%2030%20minute%20session" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
   </div>
-</section>
 
-<section class="section light container">
-  <h2>PrimeED Insights</h2>
-  <div class="blog-preview">
-    <h4>How to Score a 7 in IB Physics HL</h4>
-    <p>Learn proven tactics and past-paper secrets to maximise your marks. <a href="#">Read more</a></p>
-  </div>
-  <div class="blog-preview">
-    <h4>Top IA Topics That Actually Work</h4>
-    <p>Get ideas that stand out and align with the rubric. <a href="#">Read more</a></p>
-  </div>
-</section>
-
-<section id="book" class="section gradient">
-  <div class="container center">
-    <h2>Book a Free Trial or Sign Up</h2>
-    <p>No spam. No pressure. Just results-driven tutoring you can trust.</p>
-    <iframe class="form-frame" src="https://primeedtutors.tutorbird.com/Registration/Book/"></iframe>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2025 Jeremy Jaques | PrimeED Tutors | <a href="https://www.linkedin.com/in/thelearningcoachjeremy/" target="_blank">LinkedIn</a></p>
-</footer>
-
-<!-- Promo Banner -->
-<div class="popup-banner">
-  🎉 First session is <strong>FREE</strong> — <a href="#book">Book now!</a>
-</div>
-
-<!-- Floating WhatsApp -->
-<div class="floating-whatsapp">
-  <a href="https://wa.me/971585574637?text=Hi!%20I%27d%20like%20to%20book%20my%20free%2030%20minute%20session" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</div>
-
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
